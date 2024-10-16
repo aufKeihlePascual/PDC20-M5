@@ -4,14 +4,15 @@ function EventonClick() {
     
     const[inputValue, setInputValue] = useState('');
 
-    const handleEvent = (event) => {
-        console.log(`Event type: ${event.type}`);
-        handleClick();
-    }
-
     const handleChange = (event) => {
         setInputValue(event.target.value);
         console.log(event.target.value);
+    }
+    
+    const handleEvent = (event) => {
+        event.stopPropagation(); //this will stop the event from propagating any further
+        console.log(`Event type: ${event.type}`);
+        handleClick();
     }
 
     const handleSubmit = (event) => {
