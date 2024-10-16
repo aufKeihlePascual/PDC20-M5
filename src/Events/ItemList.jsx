@@ -29,18 +29,18 @@ function ItemList() {
     const handleDelete = (index) => {
         const filteredItems = items.filter((_, i) => i !== index);
         setItems(filteredItems);
-    }
+    };
 
     const handleEdit = (index) => {
         setCurrentItem(items[index]);
         setIsEditing(true);
         setEditingIndex(index);
-    }
+    };
 
     const handleItemClick = (event) => {
         event.stopPropagation();
         console.log("Item clicked: ", event.target.textContext);
-    }
+    };
 
     return (
         <div className="item-list-app">
@@ -49,7 +49,7 @@ function ItemList() {
                 <input
                     type="text"
                     name="name"
-                    value={currentItem}
+                    value={currentItem.name}
                     placeholder="Item name"
                     onChange={handleChange}
                     required
@@ -64,8 +64,25 @@ function ItemList() {
                     <option value="Work">Work</option>
                     <option value="Personal">Personal</option>
                 </select>
-                <button type="submit">{isEditing ? 'Update' : 'Add'}</button>
+                <button type="submit" className="{isEditing ? 'update' : 'add'}">{isEditing ? 'Update' : 'Add'}</button>
             </form>
+
+            <ul>
+                {items.map((item, index) => (
+                    <li key={index} onClick={handleItemClick}>
+                        {item.name} - {item.category}
+                        <button onClick={(event) => {
+                            event.stopPropagation();
+                            handleEdit(index);
+                        }} className="edit">Edit</button>
+
+                        <button onClick={(event) => {
+                            event.stopPropagation();
+                            handleDelete(index);
+                        }} className="delete">Delete</button>
+                    </li>
+                ))}
+            </ul>
         </div>
     );
 }
