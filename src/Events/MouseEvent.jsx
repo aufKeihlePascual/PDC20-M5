@@ -13,7 +13,7 @@ function MouseEvent() {
         <div>
             <button onMouseEnter={handleMouseEnter}
                     onDoubleClick={handleDoubleClick}
-            >
+                    >
                 Hover or Click
             </button>
         </div>
