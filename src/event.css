@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+    background-color: #f0f0f0; /* Light background for contrast */
+}
+
+.item-list-app {
+    background-color: white; /* Background color for the item list */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 2rem; /* Padding around the content */
+    max-width: 400px; /* Max width for the container */
+    width: 100%; /* Full width up to max width */
+}
+
+h2 {
+    text-align: center; /* Center the heading */
+}
+
+form {
+    display: flex;
+    flex-direction: column; /* Stack inputs vertically */
+    gap: 1rem; /* Space between inputs */
+    margin-bottom: 1.5rem; /* Space below the form */
+}
+
+input, select {
+    padding: 0.6em 1.2em; /* Consistent padding */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 8px; /* Match button styles */
+    font-size: 1em; /* Consistent font size */
+}
+
+button {
+    cursor: pointer; /* Pointer on hover */
+    border: none; /* Remove default button border */
+    padding: 0.6em 1.2em; /* Consistent padding */
+    border-radius: 8px; /* Match button styles */
+    font-size: 1em; /* Consistent font size */
+    color: white; /* Text color for buttons */
+}
+
+button.add {
+    background-color: #1a1a1a; /* Default background color for add button */
+}
+
+button.edit {
+    background-color: #4caf50; /* Green for edit button */
+}
+
+button.delete {
+    background-color: #f44336; /* Red for delete button */
+}
+
+button.update {
+    background-color: #2196F3; /* Blue for update button */
+}
+
+ul {
+    list-style-type: none; /* Remove default list style */
+    padding: 0; /* Remove default padding */
+}
+
+li {
+    display: flex;
+    justify-content: space-between; /* Space out items */
+    align-items: center; /* Center items vertically */
+    padding: 0.5rem; /* Space around list items */
+    margin: 0.5rem 0; /* Space between list items */
+    background-color: #f9f9f9; /* Light background for list items */
+    border-radius: 8px; /* Rounded corners for list items */
+}
+
+li button {
+    margin-left: 0.5rem; /* Space between edit/delete buttons */
+}
